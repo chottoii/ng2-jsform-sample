@@ -1,0 +1,30 @@
+<div id="wrap" *ngIf="pageView">
+  <mat-toolbar color="primary">
+    <button mat-button="" routerLink="/">
+      <mat-icon>home </mat-icon>&nbsp;{{title}}
+    </button><span class="fill-remaining-space"></span>
+    <div fxLayout="row" fxShow="false" fxShow.gt-sm="fxShow.gt-sm">
+      <button mat-button="mat-button" routerLink="/top">{{ 'menuTop' | mk_ng2_i18n: 'common' }}</button>
+    </div>
+
+    <mat-button-toggle-group [(ngModel)]="lang" (ngModelChange)="changeLang()">
+        <mat-button-toggle value="ja">
+          <span>日本語</span>
+        </mat-button-toggle>
+        <mat-button-toggle value="en">
+          <span>English</span>
+        </mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <button mat-button="mat-button" [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm="fxHide.gt-sm">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+  <mat-menu x-position="before" #menu="matMenu">
+    <button mat-menu-item="mat-menu-item" routerLink="/top">{{ 'menuTop' | mk_ng2_i18n: 'common' }}</button>
+  </mat-menu>
+  <div id="contents">
+    <router-outlet></router-outlet>
+  </div>
+  <mat-toolbar class="footer">footer</mat-toolbar>
+</div>

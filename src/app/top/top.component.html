@@ -1,0 +1,14 @@
+<mat-card>
+  <p>
+    {{ title | mk_ng2_i18n: combine.page.pageID }}
+  </p>
+  <js-form [combine]="combine" (onClick)="submit($event)"></js-form>
+  <div *ngIf="payLoad">
+    <hr/>
+    <strong>{{ 'inputValue' | mk_ng2_i18n: 'common' }}<br/></strong>
+    <hr/>
+    <pre [innerHTML]="payLoad | json"></pre>
+    <hr/>
+  </div>
+</mat-card>
+
