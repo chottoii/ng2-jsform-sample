@@ -1,7 +1,5 @@
 # Angular JSON Schema form (ng2-jsform) quick start application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.5.
-
 ## build & running application
 
 ```
